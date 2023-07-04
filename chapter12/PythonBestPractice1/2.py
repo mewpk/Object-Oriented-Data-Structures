@@ -1,3 +1,7 @@
+# Chapter : 12 - item : 2 - ตัวประกอบ
+
+# รับจำนวนเต็มบวก 1 จำนวนแล้วหาว่า มีจำนวนที่หารลงตัวกี่จำนวน โดยให้แสดงผลเหมือนตัวอย่าง
+
 print(" *** Divisible number ***")
 number = int(input("Enter a positive number : "))
 if number <= 0:

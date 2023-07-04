@@ -1,3 +1,7 @@
+# Chapter : 1 - item : 3 - Fun with permute
+# เขียนโปรแกรม Python เพื่อสร้างวิธีเรียงสับเปลี่ยนที่เป็นไปได้ทั้งหมดจากชุดตัวเลขที่กำหนด
+
+
 def permute(lst):
     list_number = []
     lst.reverse()
