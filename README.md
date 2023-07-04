@@ -3,4 +3,4 @@
 ### 2.Algorithms: Recursion, Complexity (Algorithm Analysis) , Hashing,Searching, Sorting
 
 <img src='./ref/a.png'>
-<img src="./ref/b.jpg">
+<img src="./ref/b.png">
