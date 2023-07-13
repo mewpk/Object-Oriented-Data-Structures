@@ -26,10 +26,7 @@ class Stack:
             self.items = list
 
     def __str__(self) -> str:
-        s = f"stack of {str(self.size())} items :"
-        for element in self.items:
-            s += f"{str(element)} "
-        return s
+        return f"Value in Stack = {list(self.items)}"
 
     def push(self, item):
 
@@ -56,8 +53,50 @@ class Stack:
 
     def deleted(self, item):
         try:
-            self.items.remove(item)
-            return item
+            test = - 1
+            s2 = Stack()
+            for i  in range(0, self.size()):
+                if self.peek() == item:
+                    self.pop()
+                    print(f"Delete = {item}")
+                    test = 1
+                else :
+                    s2.push(self.pop())
+            for i in range(s2.size()):
+                self.push(s2.pop())
+            return test
+        except:
+            return -1
+    def LD(self,number):
+        try:
+            s2 = Stack()
+            test = -1
+            for i  in range(0, self.size()):
+                if self.peek() < number:
+                    check = self.pop()
+                    test = 1
+                    print(f"Delete = {check} Because {check} is less than {number}")
+                else :
+                    s2.push(self.pop())
+            for i in range(s2.size()):
+                self.push(s2.pop())
+            return test
+        except:
+            return -1
+    def MD(self,number):
+        try:
+            s2 = Stack()
+            test = -1
+            for i  in range(0, self.size()):
+                if self.peek() > number:
+                    check = self.pop()
+                    test = 1
+                    print(f"Delete = {check} Because {check} is more than {number}")
+                else :
+                    s2.push(self.pop())
+            for i in range(s2.size()):
+                self.push(s2.pop())
+            return test
         except:
             return -1
 
@@ -68,12 +107,23 @@ def ManageStack(opt):
         if char[0] == "A":
             print(f"Add = {s1.push(int(char.split(' ')[1]))}")
         elif char[0] == "P":
-            print(f"Pop = {s1.pop()}")
+            if s1.peek() == -1 :
+                print(-1)
+            else :
+                print(f"Pop = {s1.pop()}")
         elif char[0] == "D":
-            print(f"Delete = {s1.deleted(int(char.split(' ')[1]))}")
+            if s1.deleted(int(char.split(' ')[1])) == -1 and s1.peek() == -1 :
+                print(-1)
+                
         elif char[:2] == "LD" :
-            print(f"Less than Delete = {s1.deleted(int(char.split(' ')[1]))}")
+            if s1.LD(int(char.split(' ')[1])) == -1  and s1.peek() == -1:
+                print(-1)
+        elif char[:2] == "MD" :
+            if s1.MD(int(char.split(' ')[1])) == -1 and s1.peek() == -1 :
+                print(-1)
 
+    print(s1)
 
 text = input("Enter Input : ").split(",")
 ManageStack(text)
+
