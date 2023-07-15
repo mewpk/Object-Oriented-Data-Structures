@@ -67,7 +67,7 @@ operator = {
     "-" : 1,
     "/" : 2,
     "*" : 2,
-    "^" : 4,
+    "^" : 3,
 }
 
 
@@ -77,27 +77,29 @@ for i in range(len(inp)):
     if opt not in operator and opt != ")" :
         print(opt, end='')
     else :
-        if opt == ")" :
+        if opt == "(" :
+            S.push(opt)
+        elif opt == ")" :
             while S.peek() != "(" :
                 if S.peek() != -1 :
                     print(S.pop(), end='')
                 else :
                     break
-            if S.peek() != -1 :
+            if S.peek() == "(":
                 S.pop()
         elif S.peek() not in operator :
             S.push(opt)
         else :
             if S.peek() != -1 :
-                if operator[S.peek()] <= operator[opt] :
+                if operator[S.peek()] < operator[opt] :
+                    S.push(opt)
+                elif operator[S.peek()] == operator[opt] :
+                    print(S.pop(), end='')
                     S.push(opt)
                 else :
-                    # while True :
-                    #     if S.peek() in operator and operator[S.peek()] > operator[opt]:
-                    #         print(S.pop(), end='')
-                    #     else :
-                    #         break
                     for i in range(S.size()):
+                        if S.peek() == "(" :
+                            break
                         print(S.pop(), end='')
                     S.push(opt)
 
