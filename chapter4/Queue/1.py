@@ -19,7 +19,6 @@ class Queue:
         self.items.append(i)
         return i
     def deQueue(self ):
-        
         return self.items.pop(0)
     def isEmpty(self):
         return len(self.items) == 0
