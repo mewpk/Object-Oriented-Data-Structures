@@ -46,5 +46,3 @@ for char in txt[0]:
     if char.isascii():
         q.enQueue(chr(ord(char)-diff))
         print(q)
-       
-
