@@ -34,7 +34,17 @@ class Queue:
         return len(self.items) == 0
     def size(self):
         return len(self.items)
+    def __str__(self) -> str:
+        return f"{self.items}"
     
 
 q = Queue()
+txt = input("Enter code,hint : ").split(',')
+diff  =  ord(txt[0][0])  - ord(txt[1][0])
+
+for char in txt[0]:
+    if char.isascii():
+        q.enQueue(chr(ord(char)-diff))
+        print(q)
+       
 
