@@ -43,6 +43,6 @@ txt = input("Enter code,hint : ").split(',')
 diff  =  ord(txt[0][0])  - ord(txt[1][0])
 
 for char in txt[0]:
-    if char.isascii():
+    if char:
         q.enQueue(chr(ord(char)-diff))
         print(q)
