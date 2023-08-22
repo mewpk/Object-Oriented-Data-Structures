@@ -41,6 +41,7 @@
 list_lang = []
 count = 0
 maxcount = 0
+
 def segment(temp_text, language) :
 
     if len(language) > 0 :
