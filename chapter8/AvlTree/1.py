@@ -89,7 +89,7 @@ class AVLTree:
     def _balance(self, data, node):
         balance_factor = self._balance_factor(node)
 
-        # Left Heavy
+        # Left Heavyp[[]]
         if balance_factor > 1:
             # Left-Left Case
             if data < node.left.data:
