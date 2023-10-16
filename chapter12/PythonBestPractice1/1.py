@@ -9,7 +9,6 @@
 # 			102.00-208.99	        Typhoon
 # 			>= 209			Super Typhoon
 
-
 print(" *** Wind classification ***")
 number = float(input("Enter wind speed (km/h) : "))
 if number >= 209: # [209 , inf)
