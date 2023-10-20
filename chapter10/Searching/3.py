@@ -40,7 +40,7 @@ def simple_sqrt(x, epsilon=1e-6):
             left = mid
         else:
             right = mid
-            
+    print((left + right)/2)
     return (left + right) / 2
 
 x = int(input("simple sqrt: "))
